@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Events;
 
 public class NPC : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class NPC : MonoBehaviour
     [SerializeField] private CanvasGroup canvasGroup;
     [SerializeField] private List<string> dialogues;
     [SerializeField] private int idQuestNPC;
+    public UnityEvent onCompleteMission;
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player"))
@@ -28,6 +30,7 @@ public class NPC : MonoBehaviour
                     break;
                 case QUEST_STATUS.COMPLETE:
                     dialogoText.text = dialogues[2];
+                    onCompleteMission?.Invoke();
                     break;
             }
             
