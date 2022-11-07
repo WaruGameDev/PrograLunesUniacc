@@ -479,10 +479,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turret: {fileID: 8095907965654565711, guid: 05b23bea22c8fa442a82cc8ac3f41310, type: 3}
-  turretsInLevel: []
+  turretsInLevel:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   layer:
     serializedVersion: 2
     m_Bits: 64
+  offset: {x: 0, y: 0.5, z: 0}
 --- !u!1 &585380441
 GameObject:
   m_ObjectHideFlags: 0
